@@ -25,6 +25,9 @@ public class LogoutServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getSession().invalidate();
-        response.sendRedirect(request.getContextPath()+"/login/10_loginForm.jsp");
+        //절대경로
+//        response.sendRedirect(request.getContextPath()+"/login/10_loginForm.jsp");
+        //상대경로
+        response.sendRedirect("login/10_loginForm.jsp");
     }
 }
